@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel='stylesheet' href="style.css">
+    <title>Code Quiz</title>
+</head>
+
+
+
+<body>
+
+    <div class="grid">
+
+        <p id="welcomeDiv" style="margin-top: 200px; font-weight: bolder" ;>Welcome to Code Quiz</p>
+        <p>Try to answer the following questions within the time limit. Keep in
+            mind that incorrect answers will penalize your score time by ten
+            seconds!</p>
+
+
+        <div id="startDiv"><button id="btnStarter" onclick="startQuiz()">Click to start Quiz</button></div>
+        <div id="quiz">
+            <h1> Code Quiz </h1>
+            <hr style="margin-bottom: 20px">
+
+            <p id="question"></p>
+
+
+            <div class="buttons">
+                <button id="btn0"><span id='choice0'></span></button>
+                <button id="btn1"><span id='choice1'></span></button>
+                <button id="btn2"><span id='choice2'></span></button>
+                <button id="btn3"><span id='choice3'></span></button>
+
+            </div>
+
+            <label id="enterInitial">Please enter your initials</label>
+            <input type="text" id="initial">
+            <button id="submit" onclick="showScores()">Submit</button>
+
+
+            <hr style="margin-top: 50px">
+            <footer>
+                <p id="progress">Question x of y. </p>
+                <p id="result"></p>
+
+            </footer>
+        </div>
+
+        <script src="script.js"></script>
+
+    </div>
+
+
+</body>
+
+</html>
