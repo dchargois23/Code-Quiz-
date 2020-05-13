@@ -1,3 +1,32 @@
+function setTime() {
+    var timeLeft = 60;
+    var timerInterval = setInterval(function () {
+        timeLeft--;
+        $time.textContent = "Time:" + timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(timerInterval);
+            sendMessage();
+        }
+    }, 1000);
+}
+function sendMessage() {
+    $time.textContent = "Game Over";
+}
+
+var $time = document.querySelector("#time");
+var initials = "user initials";
+var score = "user scores";
+var userAnswer = "user input";
+var timeUp = "game over";
+
+
+var startClick = document.querySelector("#btnStarter");
+startClick.addEventListener("click", function () {
+    setTime();
+    startClick.style.display = "none";
+});
+
+
 $(document).ready(function () {
 
     $("#quiz").hide();
@@ -8,7 +37,7 @@ $(document).ready(function () {
 
 });
 
-
+//Question Set
 var questions = [
     new Question("Commonly used datatypes <strong>DO NOT</strong> include ____________ .", ["1. strings", "2. booleans", "3. alerts", "4. numbers"], "3. alerts"),
     new Question("The condition in an if/else statement is inclosed within ____________ .", ["quotes", "curly brackets", "parentheses", "square brackets"], "curly brackets"),
@@ -19,11 +48,11 @@ var questions = [
 
 ];
 
-
+//Variable for questions
 var quiz = new Quiz(questions);
 
 
-
+//Question Totolizer
 function Quiz(questions) {
     this.score = 0;
     this.questions = questions;
@@ -31,7 +60,7 @@ function Quiz(questions) {
 
 }
 
-
+//click function to hide the screen at startup
 function startQuiz() {
 
     $("#startDiv").hide();
@@ -40,7 +69,7 @@ function startQuiz() {
 }
 
 
-
+//show form to enter initials
 function populate() {
     console.log(quiz.isEnded());
     if (quiz.isEnded()) {
