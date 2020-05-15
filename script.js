@@ -1,3 +1,5 @@
+
+//add timer 
 function setTime() {
     var timeLeft = 60;
     var timerInterval = setInterval(function () {
@@ -129,7 +131,6 @@ Quiz.prototype.guess = function (answer) {
 
 
     }
-
 
 
     this.questionIndex++;
