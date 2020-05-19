@@ -2,62 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel='stylesheet' href="style.css">
-    <title>Code Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Derrick Chargois Quiz</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <meta name="viewport" content="width=device-width" , initial-scale=1" />
 </head>
-<header>
-    <nav id="time" style="font-size: x-large;">Time</nav>
-
-</header>
-
 
 <body>
-
-    <div class="grid">
-
-        <p id="welcomeDiv" style="margin-top: 200px; font-weight: bolder" ;>Welcome to Code Quiz</p>
-        <p>Try to answer the following questions within the time limit. Keep in
-            mind that incorrect answers will penalize your score time by ten
-            seconds!</p>
-
-
-        <div id="startDiv"><button id="btnStarter" onclick="startQuiz()">Click to start Quiz</button></div>
-        <div id="quiz">
-            <h1> Code Quiz </h1>
-            <hr style="margin-bottom: 20px">
-
-            <p id="question"></p>
-
-
-            <div class="buttons">
-                <button id="btn0"><span id='choice0'></span></button>
-                <button id="btn1"><span id='choice1'></span></button>
-                <button id="btn2"><span id='choice2'></span></button>
-                <button id="btn3"><span id='choice3'></span></button>
-
+    <nav class="navbar-lg navbar-light bg-light">
+        <a class="navbar-brand" id="highSchores" href="./highschores.html">High Scores</a>
+        <a class="nav-item" id="timer">Time:0</a>
+    </nav>
+    <main class="container" id="landingText">
+        <h1>Coding Quiz</h1>
+        <section class="row">
+            <article class="col" id="mainText">
+                <h3>
+                    Try to answer the code-related questions within the time limit. Keep
+                    in mind that incorrect answers will penalize your scoretime by ten
+                    seconds!
+                </h3>
+                <button class="btn btn-primary" id="startQuizBtn" role="button">
+                    Start Quiz
+                </button>
+            </article>
+        </section>
+    </main>
+    <!-- Questions Here-->
+    <div class="container d-none" id="quiz">
+        <div class="row justify-content-center">
+            <div class="col-10 col-lg-8" id="questionBlock">
+                <h3 id="titleQuestion" class="mb-4">QUESTION</h3>
+                <ul id="answers" class="list-unstyled">
+                    <li class="answerChoice">A)</li>
+                    <li class="answerChoice">B)</li>
+                    <li class="answerChoice">C)</li>
+                    <li class="answerChoice">D)</li>
+                </ul>
+                <p class="accuracy"></p>
             </div>
-
-            <label id="enterInitial">Please enter your initials</label>
-            <input type="text" id="initial">
-            <button id="submit" onclick="showScores()">Submit</button>
-
-
-            <hr style="margin-top: 50px">
-            <footer>
-                <p id="progress">Question x of y. </p>
-                <p id="result"></p>
-
-            </footer>
         </div>
-
-        <script src="script.js"></script>
-
     </div>
-
-
+    <!--Final Screen -->
+    <div class="container d-none" id="submitScore">
+        <div class="row justify-content-center">
+            <div class="col-10 col-lg-8">
+                <h2>All Done!</h2>
+                <p id="userScore"></p>
+                <form class="form-group">
+                    <label for="new-score">Enter your name: </label>
+                    <input type="text" id="userName" />
+                    <button type="button" class="btn btn-primary btn-lg" id="submitBtn">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type=text/javascript src=./script.js></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
